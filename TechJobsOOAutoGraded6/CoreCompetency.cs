@@ -11,6 +11,7 @@ namespace TechJobsOOAutoGraded6
 
         public CoreCompetency()
         {
+            // comment
             id = nextId;
             nextId++;
         }
