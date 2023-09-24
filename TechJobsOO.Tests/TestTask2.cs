@@ -8,7 +8,7 @@ namespace TechJobsOO.Tests
 
         // Testing Location --------------------------------------------------------
 
-        /* TODO: Task 2: Remove this line to uncomment the tests
+        
 
         [TestMethod] //1
         public void Test_Second_Location_Constructor_Exists()
@@ -125,12 +125,12 @@ namespace TechJobsOO.Tests
             PositionType testPosition = new PositionType("Quality Control");
             PositionType testPosition2 = new PositionType("Quality Control");
 
-            MethodInfo mInfo = typeof(PositionType).GetMethod("Equals");
-            MethodBody mBody = mInfo.GetMethodBody();
+            MethodInfo? mInfo = typeof(PositionType).GetMethod("Equals");
+            MethodBody? mBody = mInfo.GetMethodBody();
 
-            int lviCount = mBody.LocalVariables.Count;
-            string mName = mInfo.ReflectedType.Name;
-            string mGBD = mInfo.GetBaseDefinition().ReflectedType.Name;
+            int? lviCount = mBody.LocalVariables.Count;
+            string? mName = mInfo.ReflectedType.Name;
+            string? mGBD = mInfo.GetBaseDefinition().ReflectedType.Name;
 
             //verify setup
             Assert.AreNotEqual(mName, mGBD, "Equals method belongs to PositionType class");
@@ -178,7 +178,6 @@ namespace TechJobsOO.Tests
             Assert.AreEqual(testPosition.Value.ToString(), "Quality Control", "ToString does not return same output as set value");
         }
 
-        TODO: Task 2: Remove this line to uncomment the tests */
 
     }
 }

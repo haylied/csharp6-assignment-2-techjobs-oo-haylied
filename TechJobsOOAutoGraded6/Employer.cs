@@ -18,7 +18,7 @@ namespace TechJobsOOAutoGraded6
             Value = value;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object obj) //rewriting equals(), gethashcode(), and tostring()
         {
             return obj is Employer employer &&
                    Id == employer.Id;

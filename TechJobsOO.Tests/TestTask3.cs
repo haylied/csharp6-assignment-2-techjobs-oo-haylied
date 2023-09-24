@@ -6,9 +6,9 @@ namespace TechJobsOO.Tests
 	{
         //Testing the new Job class.  Tests are numbered.
 
-        /* TODO: Task 3: Remove this line to uncomment the tests
-          
-     
+        //TODO: Task 3: Remove this line to uncomment the tests 
+
+
         [TestMethod]    //1
         public void Test_JobClass_Has_No_Arg_Constructor()
         {
@@ -99,8 +99,8 @@ namespace TechJobsOO.Tests
             //setup
             Job testJob1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
             Job testJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-            MethodInfo mInfo = typeof(Job).GetMethod("Equals");
-            MethodBody mBody = mInfo.GetMethodBody();
+            MethodInfo? mInfo = typeof(Job).GetMethod("Equals");
+            MethodBody? mBody = mInfo.GetMethodBody();
             int lviCount = mBody.LocalVariables.Count;
             string mName = mInfo.ReflectedType.Name;
             string mGBD = mInfo.GetBaseDefinition().ReflectedType.Name;
@@ -121,8 +121,8 @@ namespace TechJobsOO.Tests
             //setup
             Job testJob1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
             Job testJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-            MethodInfo mInfo = typeof(Job).GetMethod("GetHashCode");
-            MethodBody mBody = mInfo.GetMethodBody();
+            MethodInfo? mInfo = typeof(Job).GetMethod("GetHashCode");
+            MethodBody? mBody = mInfo.GetMethodBody();
             int localCount = mBody.LocalVariables.Count;
 
             //verify setup
@@ -132,7 +132,7 @@ namespace TechJobsOO.Tests
             Assert.AreNotEqual(testJob1.GetHashCode(), testJob2.GetHashCode(), "GetHashCode output test");
         }
 
-        TODO: Task 3: Remove this line to uncomment the tests */
+       
     }
 }
 
