@@ -24,17 +24,19 @@ namespace TechJobs.Tests
         public void TestJobConstructorSetsAllFields()
         {
             Assert.AreEqual("Product tester", job3.Name, "Test name field");
-            Assert.AreEqual(new Employer("ACME"), job3.EmployerName, "Test EmployerName field");
-            Assert.AreEqual(new Location("Desert"), job3.EmployerLocation, "Test EmployerLocation field");
-            Assert.AreEqual(new PositionType("Quality control"), job3.JobType, "Test JobType field");
-            Assert.AreEqual(new CoreCompetency("Persistence"), job3.JobCoreCompetency, "Test JobCoreCompetency field");
+            Assert.AreEqual("ACME", job3.EmployerName.Value, "Test EmployerName field");
+            Assert.AreEqual("Desert", job3.EmployerLocation.Value, "Test EmployerLocation field");
+            Assert.AreEqual("Quality control", job3.JobType.Value, "Test JobType field");
+            Assert.AreEqual("Persistence", job3.JobCoreCompetency.Value, "Test JobCoreCompetency field");
         }
 
-        //[TestMethod]
-        //public void TestJobsForEquality()
-        //{
-        //    Assert.Equals(job3, job4, "Test Equals() returns false");
-        //}
+        [TestMethod]
+        public void TestJobsForEquality()
+        {
+            Assert.AreNotEqual(job3, job4, "Test Equals() returns false");
+        }
+
+
     }
 }
 
