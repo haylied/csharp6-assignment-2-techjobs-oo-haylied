@@ -1,19 +1,19 @@
 ﻿using System;
 namespace TechJobsOOAutoGraded6
 {
-	public class Job
-	{
-        
+    public class Job
+    {
 
-            public int Id { get; }
-            private static int nextId = 1;
-            public string? Name { get; set; }
-            public Employer? EmployerName { get; set; }
-            public Location? EmployerLocation { get; set; }
-            public PositionType? JobType { get; set; }
-            public CoreCompetency? JobCoreCompetency { get; set; }
 
-            // TODO: Task 3: Add the two necessary constructors.
+        public int Id { get; }
+        private static int nextId = 1;
+        public string? Name { get; set; }
+        public Employer? EmployerName { get; set; }
+        public Location? EmployerLocation { get; set; }
+        public PositionType? JobType { get; set; }
+        public CoreCompetency? JobCoreCompetency { get; set; }
+
+        // TODO: Task 3: Add the two necessary constructors.
 
         public Job()
         {
@@ -45,7 +45,23 @@ namespace TechJobsOOAutoGraded6
 
         // TODO: Task 5: Generate custom ToString() method.
         //Until you create this method, you will not be able to print a job to the console.
+        public override string ToString()
+        {
+            string jobID = "ID: " + Id + "\n";
+            string name = "Name: " + Name + "\n";
+            string employer = "Employer: " + EmployerName + "\n";
+            string location = "Location: " + EmployerLocation + "\n";
+            string positionType = "Position Type: " + JobType + "\n";
+            string coreCompetency = "Core Competency: " + JobCoreCompetency;
 
+            if (Name == null || EmployerName == null || EmployerLocation == null
+                || JobType == null || JobCoreCompetency == null)
+            {
+
+            }
+                return "\n" + jobID + name + employer + location + positionType
+                + coreCompetency +"\n";
+        }
 
 
     }

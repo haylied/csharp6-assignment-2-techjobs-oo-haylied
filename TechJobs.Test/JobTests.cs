@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace TechJobs.Tests
 {
     [TestClass]
@@ -36,7 +38,29 @@ namespace TechJobs.Tests
             Assert.AreNotEqual(job3, job4, "Test Equals() returns false");
         }
 
+        [TestMethod]
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+            Assert.AreEqual(true, job3.ToString().StartsWith("\n"), "Job.ToString() starts with new line");
+            Assert.AreEqual(true, job3.ToString().EndsWith("\n"), "Job.ToString() ends with new line");
+        }
 
+        [TestMethod]
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+            Assert.AreEqual(true, job3.ToString().Contains("ID: " + job3.Id), "ID: returns same value");
+            Assert.AreEqual(true, job3.ToString().Contains("Name: " + job3.Name), "Name: returns same value");
+            Assert.AreEqual(true, job3.ToString().Contains("Employer: " + job3.EmployerName), "Employer: returns same value");
+            Assert.AreEqual(true, job3.ToString().Contains("Location: " + job3.EmployerLocation), "Location: returns same value");
+            Assert.AreEqual(true, job3.ToString().Contains("Position Type: " + job3.JobType), "Position Type: returns same value");
+            Assert.AreEqual(true, job3.ToString().Contains("Core Competency: " + job3.JobCoreCompetency), "Core Competency: returns same value");
+        }
+
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+            Assert.AreEqual(true, job1.ToString().Contains("Data not available"), "ToString() handles Empty Field");
+        }
     }
-}
 
+}
