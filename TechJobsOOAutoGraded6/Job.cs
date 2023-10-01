@@ -47,20 +47,32 @@ namespace TechJobsOOAutoGraded6
         //Until you create this method, you will not be able to print a job to the console.
         public override string ToString()
         {
-            string jobID = "ID: " + Id + "\n";
-            string name = "Name: " + Name + "\n";
-            string employer = "Employer: " + EmployerName + "\n";
-            string location = "Location: " + EmployerLocation + "\n";
-            string positionType = "Position Type: " + JobType + "\n";
-            string coreCompetency = "Core Competency: " + JobCoreCompetency;
+            List<string> values = new List<string> {Name, EmployerName.ToString(), EmployerLocation.ToString(), JobType.ToString(), JobCoreCompetency.ToString() };
+            List<string> output = new List<string> {};
 
-            if (Name == null || EmployerName == null || EmployerLocation == null
-                || JobType == null || JobCoreCompetency == null)
+            foreach(string value in values)
             {
+                if (value == null)
+                {
+                    output.Add("Data Not Available\n");
+                }
+                else
+                {
+                    output.Add(value + "\n");
+                }
 
             }
-                return "\n" + jobID + name + employer + location + positionType
-                + coreCompetency +"\n";
+
+            string jobID = "ID: " + Id + "\n";
+            string name = "Name: " + output[0];
+            string employer = "Employer: " + output[1];
+            string location = "Location: " + output[2];
+            string positionType = "Position Type: " + output[3];
+            string coreCompetency = "Core Competency: " + output[4];
+            
+            return "\n" + jobID + name + employer + location + positionType
+            + coreCompetency;
+
         }
 
 

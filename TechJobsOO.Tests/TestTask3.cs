@@ -20,7 +20,7 @@ namespace TechJobsOO.Tests
 
             foreach (var name in constructorInfos)
             {
-                conNames.Add(name.ToString(Console.WriteLine(Environment.NewLine)));
+                conNames.Add(name.ToString());
             }
 
             foreach (string name in conNames)
@@ -59,7 +59,7 @@ namespace TechJobsOO.Tests
 
             foreach (var name in constructorInfos)
             {
-                conNames.Add(name.ToString(Console.WriteLine(Environment.NewLine)));
+                conNames.Add(name.ToString());
             }
 
             foreach (string name in conNames)
@@ -85,10 +85,10 @@ namespace TechJobsOO.Tests
 
             //verify 
             Assert.AreEqual(testJob1.Name, "Product tester", "Testing Job Name");
-            Assert.AreEqual(testJob1.EmployerName.ToString(Console.WriteLine(Environment.NewLine)), "ACME", "Testing EmployerName Value");
-            Assert.AreEqual(testJob1.EmployerLocation.ToString(Console.WriteLine(Environment.NewLine)), "Desert", "Testing EmployerLocation Value");
-            Assert.AreEqual(testJob1.JobType.ToString(Console.WriteLine(Environment.NewLine)), "Quality control", "Testing JobType Value");
-            Assert.AreEqual(testJob1.JobCoreCompetency.ToString(Console.WriteLine(Environment.NewLine)), "Persistence", "Testing JobCoreCompetency Value");
+            Assert.AreEqual(testJob1.EmployerName.ToString(), "ACME", "Testing EmployerName Value");
+            Assert.AreEqual(testJob1.EmployerLocation.ToString(), "Desert", "Testing EmployerLocation Value");
+            Assert.AreEqual(testJob1.JobType.ToString(), "Quality control", "Testing JobType Value");
+            Assert.AreEqual(testJob1.JobCoreCompetency.ToString(), "Persistence", "Testing JobCoreCompetency Value");
             Assert.AreNotEqual(testJob1.Id, testJob2.Id, "Job objects should have unique ids");
         }
 

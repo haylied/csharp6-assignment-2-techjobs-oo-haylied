@@ -32,7 +32,7 @@ namespace TechJobsOOAutoGraded6
         }
 
         public override string ToString()
-        {
+        { 
             return Value;
         }
     }

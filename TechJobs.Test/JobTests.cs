@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Linq;
 
 namespace TechJobs.Tests
 {
@@ -59,7 +60,12 @@ namespace TechJobs.Tests
         [TestMethod]
         public void TestToStringHandlesEmptyField()
         {
-            Assert.AreEqual(true, job1.ToString().Contains("Data not available"), "ToString() handles Empty Field");
+      
+            Assert.AreEqual(true, job1.ToString().Contains("Name: " + "Data Not Available"), "Name: returns \"Data Not Available\" value");
+            Assert.AreEqual(true, job1.ToString().Contains("Employer: " + "Data Not Available"), "Employer: returns \"Data Not Available\" value");
+            Assert.AreEqual(true, job1.ToString().Contains("Location: " + "Data Not Available"), "Location: returns \"Data Not Available\" value");
+            Assert.AreEqual(true, job1.ToString().Contains("Position Type: " + "Data Not Available"), "Position Type: returns \"Data Not Available\" value");
+            Assert.AreEqual(true, job1.ToString().Contains("Core Competency: " + "Data Not Available"), "Core Competency: returns \"Data Not Available\" value");
         }
     }
 
