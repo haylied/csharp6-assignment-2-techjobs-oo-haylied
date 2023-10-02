@@ -47,10 +47,10 @@ namespace TechJobsOOAutoGraded6
         //Until you create this method, you will not be able to print a job to the console.
         public override string ToString()
         {
-            List<string> values = new List<string> {Name, EmployerName.ToString(), EmployerLocation.ToString(), JobType.ToString(), JobCoreCompetency.ToString() };
+            List<string> values = new List<string> {Name, EmployerName?.ToString(), EmployerLocation?.ToString(), JobType?.ToString(), JobCoreCompetency?.ToString() };
             List<string> output = new List<string> {};
 
-            foreach(string value in values)
+            foreach(string? value in values)
             {
                 if (value == null)
                 {
